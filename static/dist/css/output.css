@@ -2043,3 +2043,8 @@ input:checked + .toggle-bg {
     line-height: 1;
   }
 }
+
+form{
+  width: 40%;
+  margin:auto;
+}
