@@ -18,9 +18,9 @@
 
 <body>
   
-  <div class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <div class="uk-navbar-left ">
-      <a href="#" class="uk-navbar-item uk-logo" aria-label="Back to Home">NETFLEX</a>
+      <a href="#" class="uk-navbar-item uk-logo text-red-800" aria-label="Back to Home">NETFLEX</a>
     </div>
     <div class="uk-navbar-center">
       <ul class="uk-navbar-nav">
@@ -34,7 +34,7 @@
           <a href="">Movies</a>
         </li>
         <li>
-          <a href="">My Favorites</a>
+          <a href="">My List</a>
         </li>
       </ul>
     </div>
@@ -58,10 +58,12 @@
     </div>
   </div>
   
+  {% block content %}{% endblock %}
 
 
     
 
+  <!-- #TODO: add footer -->
     
 </body>
 

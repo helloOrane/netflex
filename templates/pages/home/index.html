@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Recently added</h1>
+    <div uk-slider="center: true">
+        <div class="uk-position-relative ">
+            <div class="uk-slider-container ">
+                <!-- FIXME: Width à corriger -->
+                <div class=" uk-slider-items uk-child-width-1-1">
+                    <!-- DIAPO D UN FILM -->
+                    <div>
+                        <a href="">
+                            <img src="https://via.placeholder.com/800x400" alt="">
+                        </a>
+                        <!-- CARD -->
+                        <div class="uk-position-bottom-left uk-card uk-card-body uk-background-muted uk-margin-small">
+                             <div class="uk-card-header">
+                                 <h2 class="uk-card-title">TITLE</h2>
+
+                             </div>
+                             <div class="uk-card-body uk-visible@s">
+                                <p class="uk-margin">DESCRIPTION</p>
+                             </div>
+                            <div class="uk-card-footer uk-flex">
+                                <!-- TODO: add icon + responsive -->
+                                <button class="uk-button uk-button-primary">Watch</button>
+                                <button class="uk-button uk-button-default">Add to my list</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN DIAPO FILM -->
+                    <a href="">
+                        <img src="https://via.placeholder.com/800x400" alt="">
+                    </a>
+                    <a href="">
+                        <img src="https://via.placeholder.com/800x400" alt="">
+                    </a>
+                    <a href="">
+                        <img src="https://via.placeholder.com/800x400" alt="">
+                    </a>
+                </div>
+            </div>
+                     <!-- TODO: FIX navigation -->
+
+            <a class="uk-position-center-left" href uk-slider-item="previous"><span uk-icon='icon: chevron-left' ></a>
+            <a class="uk-position-center-right" href uk-slider-item="next"><span uk-icon='icon: chevron-right' ></a>
+        </div>
+        <ul class="uk-slider-nav uk-dotnav"></ul>
+        
+    </div>
+{% endblock %}
