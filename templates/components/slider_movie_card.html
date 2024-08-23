@@ -1,0 +1,23 @@
+{% extends "pages/home/index.html" %}
+
+{% block slider_movie_card %}
+    {%for movie in movies %}
+        <div>
+            <a href="">
+                <img src={{movie.picture}} alt="">
+            </a>
+            <div class="uk-position-bottom-left uk-card uk-card-body uk-background-muted uk-margin-small">
+                <div class="uk-card-header">
+                    <h2 class="uk-card-title">{{movie.title}}</h2>
+                </div>
+                <div class="uk-card-body uk-visible@s">
+                    <p class="uk-margin">{{movie.resume}}</p>
+                </div>
+                <div class="uk-card-footer uk-flex">
+                    <button class="uk-button uk-button-primary">Watch</button>
+                    <button class="uk-button uk-button-default">Add to my list</button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
