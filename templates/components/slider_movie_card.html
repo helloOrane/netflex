@@ -21,3 +21,11 @@
         </div>
     {% endfor %}
 {% endblock %}
+
+{%block test%}
+    {% for movie in horror_movies %}
+    <div class="uk-flex">
+        {{movie.title}}
+    </div>
+    {% endfor %}
+{%endblock%}
