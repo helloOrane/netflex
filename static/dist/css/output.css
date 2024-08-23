@@ -2044,7 +2044,6 @@ input:checked + .toggle-bg {
   }
 }
 
-form{
-  width: 40%;
-  margin:auto;
+#test{
+  object-fit: cover;
 }
