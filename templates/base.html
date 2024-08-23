@@ -17,8 +17,8 @@
 </head>
 
 <body>
-  
-  <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <!-- NAVBAR -->
+  <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-margin-small-bottom" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <div class="uk-navbar-left ">
       <a href="#" class="uk-navbar-item uk-logo text-red-800" aria-label="Back to Home">NETFLEX</a>
     </div>
@@ -40,18 +40,15 @@
     </div>
     <div class="uk-navbar-right">
       <div class="uk-navbar-item" >
-        <!-- SEARCHBAR -->
          <form class="uk-search" aria-label="Search">
              <input class="uk-search-input uk-width-medium" type="search" placeholder="" aria-label=""/>
              <span uk-search-icon class="uk-search-icon-flip"></span>
          </form>
       </div>
       <div class="uk-navbar-item">
-        <!-- ICON NOTIF -->
          <span uk-icon="bell"></span>
       </div>
       <div class="uk-navbar-item">
-        <!-- ICON USER -->
            <a href="">My Account <span uk-navbar-parent-icon ></span></a>
            <div class="uk-navbar-dropdown">…</div>
       </div>
@@ -60,6 +57,8 @@
   
   {% block content %}{% endblock %}
 
+
+  
 
     
 

@@ -1,26 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Recently added</h1>
-    <div uk-slider="center: true">
+    <h2 class="uk-text-large uk-text-bold">Recently added</h2>
+    <div uk-slider="">
         <div class="uk-position-relative ">
             <div class="uk-slider-container ">
-                <!-- FIXME: Width à corriger -->
-                <div class=" uk-slider-items uk-child-width-1-1">
-                    <!-- DIAPO D UN FILM -->
+                <div class=" uk-slider-items uk-child-width-1-2">
                      {% block slider_movie_card %}
                      {%endblock %}
-                    <a href="">
+                    <!-- <a href="">
                         <img src="https://via.placeholder.com/800x400" alt="">
                     </a> -->
                 </div>
             </div>
             <!-- TODO: FIX navigation -->
-
             <a class="uk-position-center-left" href uk-slider-item="previous"><span uk-icon='icon: chevron-left' ></a>
             <a class="uk-position-center-right" href uk-slider-item="next"><span uk-icon='icon: chevron-right' ></a>
+
         </div>
-        <ul class="uk-slider-nav uk-dotnav"></ul>
         
     </div>
 {% endblock %}
