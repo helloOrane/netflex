@@ -86,7 +86,7 @@ horror_movies = [
 @app.route("/")
 @app.route("/index")
 def index():
-	return render_template("components/slider_movie_card.html", movies=movies, horror_movies=horror_movies, scifi_movies=horror_movies)
+	return render_template("pages/home/components.html", movies=movies, horror_movies=horror_movies, scifi_movies=horror_movies)
 
 
 

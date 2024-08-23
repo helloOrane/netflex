@@ -1,10 +1,10 @@
 {% extends "pages/home/index.html" %}
 
-{% block slider_movie_card %}
+{% block slider_movie %}
     {%for movie in movies %}
         <div class="uk-cover-container uk-height-large">
             <a href="">
-                <img class="" id="test" src={{movie.picture}} alt="{{movie.title}} picture" height="400">
+                <img class="home-movies-news-slider" src={{movie.picture}} alt="{{movie.title}} picture">
             </a>
             <div class="uk-position-bottom-left uk-card uk-card-body uk-margin-medium-left uk-margin-medium-bottom uk-width-1-3 uk-height-1-2 uk-background-muted">
                 <div class="uk-card-header">
@@ -13,9 +13,13 @@
                 <div class="uk-card-body uk-visible@s">
                     <p class="uk-margin uk-text-truncate">{{movie.resume}}</p>
                 </div>
-                <div class="uk-card-footer uk-flex">
-                    <button class="uk-button uk-button-primary">Watch</button>
-                    <button class="uk-button uk-button-default">Add to my list</button>
+                <div class="uk-card-footer uk-flex uk-child-with-1-2">
+                    <button class="uk-button uk-button-primary uk-margin-small-right uk-width-1-2">Watch</button>
+                    <button class="uk-button uk-button-default uk-width-1-2">
+                        <span class="uk-hidden@l">
+                            <span uk-icon="icon: plus; ratio: 0.5"></span> List
+                        </span>
+                        <span class="uk-visible@l">Add to list</span></button>
                 </div>
             </div>
         </div>
@@ -26,7 +30,7 @@
     {% for horror_movie in horror_movies %}
         <div>
             <a href="">
-                <img src={{horror_movie.picture}} alt="{{horror_movie.title}} picture">
+                <img class="home-movie-category-slider"  src={{horror_movie.picture}} alt="{{horror_movie.title}} picture" height="400px">
             </a>
         </div>
     {% endfor %}
@@ -36,7 +40,7 @@
     {% for scifi_movie in scifi_movies %}
         <div>
             <a href="">
-                <img src={{scifi_movie.picture}} alt="{{scifi_movie.title}} picture">
+                <img class="home-movie-category-slider" src={{scifi_movie.picture}} alt="{{scifi_movie.title}} picture" height="400px">
             </a>
         </div>
     {% endfor %}

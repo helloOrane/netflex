@@ -18,7 +18,7 @@
 
 <body>
   <!-- NAVBAR -->
-  <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-margin-small-bottom" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-margin-small-bottom uk-visible@s" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <div class="uk-navbar-left ">
       <a href="#" class="uk-navbar-item uk-logo text-red-800" aria-label="Back to Home">NETFLEX</a>
     </div>
@@ -54,11 +54,52 @@
       </div>
     </div>
   </div>
-  
-  {% block content %}{% endblock %}
+
+  <!-- Navbar for mobile screen -->
+  <nav class="uk-navbar-container uk-hidden@s">
+    <div class="uk-container">
+      <div uk-navbar>
+        <div class="uk-navbar-left ">
+          <a href="#" class="uk-navbar-item uk-logo text-red-800" aria-label="Back to Home">NETFLEX</a>
+        </div>
+        <div class="uk-navbar-right">
+          <a
+            class="uk-navbar-toggle-animate uk-navbar-toggle"
+            uk-navbar-toggle-icon
+            href="#"
+          ></a>
+          <div class="uk-navbar-dropdown">
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+              <li class="uk-active">
+                <a href="">Home</a>
+              </li>
+              <li>
+                <a href="">TV Shows</a>
+              </li>
+              <li>
+                <a href="">Movies</a>
+              </li>
+              <li>
+                <a href="">My List</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
-  
+
+
+
+  <div class="uk-width-4-5 uk-margin-auto">
+    {% block content %}{% endblock %}
+
+
+    {% block test %}{% endblock %}
+  </div>
+
 
     
 

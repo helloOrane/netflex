@@ -2044,6 +2044,17 @@ input:checked + .toggle-bg {
   }
 }
 
-#test{
+.home-movie-category-slider{
   object-fit: cover;
+  height: 400px;
+}
+
+.home-movies-news-slider{
+  height: 600px;
+  object-fit: cover;
+  width:100%; 
+}
+
+div .uk-card-body .uk-background-muted{
+  opacity: 0.5;
 }

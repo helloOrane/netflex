@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2 class="uk-text-large uk-text-bold">Recently added</h2>
+    <h2 class="uk-text-large uk-text-bold uk-margin-medium-top">Recently added</h2>
     <!-- SLIDER -->
     <div uk-slider="">
         <div class="uk-position-relative ">
             <div class="uk-slider-container ">
                 <div class=" uk-slider-items uk-child-width-1-1">
-                     {% block slider_movie_card %}
+                     {% block slider_movie %}
                      {%endblock %}
                     <!-- <a href="">
                         <img src="https://via.placeholder.com/800x400" alt="">
@@ -39,7 +39,7 @@
     </div>
 
     <!-- CATEGORY 2 -->
-    <h2 class="uk-text-large uk-text-bold uk-margin-medium-top">SCI-FI</h2>
+    <h2 class="uk-text-large uk-text-bold uk-margin-medium-top">Sci-Fi</h2>
     <div uk-slider>
         <div class="uk-position-relative">
             <div class="uk-slider-container">
