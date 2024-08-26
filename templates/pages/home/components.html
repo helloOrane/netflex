@@ -1,7 +1,7 @@
-{% extends "pages/home/index.html" %}
+<!-- {% extends "pages/home/index.html" %}
 
-{% block slider_movie %}
-    {%for movie in movies %}
+{% block slider_item_last_added %}
+    {%for movie in datas.movies %}
         <div class="uk-cover-container uk-height-large">
             <a href="">
                 <img class="home-movies-news-slider" src={{movie.picture}} alt="{{movie.title}} picture">
@@ -27,21 +27,33 @@
 {% endblock %}
 
 {%block horror_category%}
-    {% for horror_movie in horror_movies %}
+
+    {% for horror_movie in datas.horror_movies %}
         <div>
-            <a href="">
-                <img class="home-movie-category-slider"  src={{horror_movie.picture}} alt="{{horror_movie.title}} picture" height="400px">
-            </a>
-        </div>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                <a href="">
+                    <img class="home-movie-category-slider"  src={{horror_movie.picture}} alt="{{horror_movie.title}} picture" height="400px">
+                </a>
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">{{horror_movie.title}}</h3>
+                <p>
+                    {{horror_movie.resume}}
+                </p>
+              </div>
+            </div>
+          </div>
     {% endfor %}
 {%endblock%}
 
 {%block scifi_category%}
-    {% for scifi_movie in scifi_movies %}
+
+    {% for scifi_movie in datas.scifi_movies %}
         <div>
             <a href="">
                 <img class="home-movie-category-slider" src={{scifi_movie.picture}} alt="{{scifi_movie.title}} picture" height="400px">
             </a>
         </div>
     {% endfor %}
-{%endblock%}
+{%endblock%} -->

@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-movies = [
+movies_datas = [
 	{
 		"title": "Alien Romulus",
 		"year": 2024,
@@ -83,10 +83,40 @@ horror_movies = [
 	}
 ]
 
+datas = [
+				{
+			"category_title": "Recently added",
+			"movies": horror_movies
+		},
+		{
+			"category_title": "Horror Movies",
+			"movies": horror_movies
+		},
+		{
+			"category_title": "Sci-Fi Movies",
+			"movies": horror_movies
+		},
+		{
+			"category_title": "Action Movies",
+			"movies": horror_movies
+		}
+	]
+
 @app.route("/")
 @app.route("/index")
 def index():
-	return render_template("pages/home/components.html", movies=movies, horror_movies=horror_movies, scifi_movies=horror_movies)
+	print(type(movies))
+
+	
+
+	print(type(datas))
+	return render_template("pages/home/index.html", datas=datas)
+
+@app.route("/movies")
+def movies():
+	return render_template('pages/movies/index.html', movies=datas)
+
+
 
 
 
