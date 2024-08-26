@@ -21,18 +21,18 @@
   <!-- NAVBAR -->
   <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-margin-small-bottom uk-visible@s" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <div class="uk-navbar-left">
-      <a href="#" class="uk-navbar-item uk-logo uk-margin-medium-left" aria-label="Back to Home">SPACEFLUX</a>
+      <a href="{{ url_for('index') }}" class="uk-navbar-item uk-logo uk-margin-medium-left" aria-label="Back to Home">SPACEFLUX</a>
     </div>
     <div class="uk-navbar-center">
       <ul class="uk-navbar-nav">
         <li>
-          <a href="">Home</a>
+          <a href="{{ url_for('index') }}">Home</a>
         </li>
         <li>
-          <a href="">TV Shows</a>
+          <a href="{{ url_for('tv_shows') }}">TV Shows</a>
         </li>
         <li>
-          <a href="">Movies</a>
+          <a href="{{ url_for('movies') }}">Movies</a>
         </li>
         <li>
           <a href="">My List</a>
