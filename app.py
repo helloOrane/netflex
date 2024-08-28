@@ -11,7 +11,7 @@ movies_datas = [
 		"director": "Fede Álvarez",
 		"genre": "Drama",
 		"picture": "./static/img/alien-romulus.webp",
-
+		"video": "x0XDEhP4MQs?si=MQou6bAzHhbgbRx7"
 	},
 	{
 		"id":2,
@@ -21,6 +21,7 @@ movies_datas = [
 		"director": "Francis Ford Coppola",
 		"genre": "Crime",
 		"picture": "./static/img/godfather.png",
+		"video": "UaVTIH8mujA?si=ITrrqUJT7LE3X-sa"
 
 	},
 	{
