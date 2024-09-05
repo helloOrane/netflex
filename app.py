@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from api import config
 
 app = Flask(__name__)
 
@@ -148,7 +149,8 @@ datas = [
 @app.route("/")
 @app.route("/index")
 def index():
-	print(type(datas))
+	requestResponse = config.get_latest_movies()['results']
+	# datas[0]
 	return render_template('pages/home/index.html', datas=datas)
 
 @app.route("/movies")
