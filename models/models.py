@@ -1,17 +1,13 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import DeclarativeBase
+from flask_sqlalchemy import SQLAlchemy
+from init import db
 
-# create the app
-app = Flask(__name__)
-# configure the SQLite database, relative to the app instance folder
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db" 
-app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
-# initialize the app with the extension
-db = SQLAlchemy(app)
 
+class Base(DeclarativeBase):
+    pass
 
 class Movie(db.Model):
 
@@ -67,7 +63,4 @@ class Person(db.Model):
         def __repr__(self):
             return f"<Person(name={self.name})>"
         
-
-# create the tables
-with app.app_context():
-    db.create_all()
+# db = SQLAlchemy(model_class=Base)
