@@ -2058,3 +2058,17 @@ input:checked + .toggle-bg {
 div .uk-card-body .uk-background-muted{
   opacity: 0.5;
 }
+
+.text-xl {
+  font-size: 2rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.height-90{
+  height: 90%;
+}
+
+.text-white {
+  color: #fff;
+}

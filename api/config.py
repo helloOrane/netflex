@@ -2,6 +2,9 @@ import requests
 from dotenv import load_dotenv
 import os
 
+from models.init import Movie
+
+
 
 load_dotenv()
 API_BEARER_TOKEN = os.getenv('API_BEARER_TOKEN')
@@ -22,5 +25,15 @@ def get_latest_movies():
     return response.json()
 
 
-movies = get_latest_movies()
-print(movies)
+# movies = get_latest_movies()
+# for movie in movies['results']:
+#     new_movie_db = Movie(
+#         name=movie['title'],
+#         release_year=movie['release_date'],
+#         picture=movie['poster_path'],
+#         genre_id=1,
+#         video=movie['video'],
+#         director=movie['director'],
+#         resume=movie['overview']
+#     )
+# print(movies)

@@ -4,6 +4,8 @@ from sqlalchemy import ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
+# FIXME: ATTENTION, FICHIERS PLUS UTILISES
+
 # create the app
 app = Flask(__name__)
 # configure the SQLite database, relative to the app instance folder

@@ -147,11 +147,12 @@ datas = [
 	]
 
 @app.route("/")
-@app.route("/index")
+@app.route("/authentication")
 def index():
-	requestResponse = config.get_latest_movies()['results']
-	# datas[0]
-	return render_template('pages/home/index.html', datas=datas)
+	
+
+	# return render_template('pages/home/index.html', datas=datas)
+	return render_template('pages/authentication/index.html')
 
 @app.route("/movies")
 def movies():
