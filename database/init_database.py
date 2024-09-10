@@ -3,7 +3,6 @@ import os
 from random import randrange
 import uuid
 from sqlalchemy import create_engine
-from sqlalchemy import text
 
 engine = create_engine('sqlite:///netflex.db', echo=False)
 
