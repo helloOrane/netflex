@@ -1,113 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spaceflux</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflex</title>
     <link
-    rel="stylesheet"
-    href="https://unpkg.com/franken-wc@0.1.0/dist/css/zinc.min.css"
-  />
-    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+      rel="stylesheet"
+      href="https://unpkg.com/franken-wc@0.1.0/dist/css/zinc.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/css/output.css')}}"
+    />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
-    <link href="https://fonts.cdnfonts.com/css/d-din?styles=37959,37958,37957,37961,37964,37963,37960,37962" rel="stylesheet">
-                
-</head>
+    <link
+      href="https://fonts.cdnfonts.com/css/d-din?styles=37959,37958,37957,37961,37964,37963,37960,37962"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <!-- NAVBAR -->
-  <div class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-margin-small-bottom uk-visible@s" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-    <div class="uk-navbar-left">
-      <a href="{{ url_for('index') }}" class="uk-navbar-item uk-logo uk-margin-medium-left" aria-label="Back to Home">SPACEFLUX</a>
-    </div>
-    <div class="uk-navbar-center">
-      <ul class="uk-navbar-nav">
-        <li>
-          <a href="{{ url_for('index') }}">Home</a>
-        </li>
-        <li>
-          <a href="{{ url_for('tv_shows') }}">TV Shows</a>
-        </li>
-        <li>
-          <a href="{{ url_for('movies') }}">Movies</a>
-        </li>
-        <li>
-          <a href="">My List</a>
-        </li>
-      </ul>
-    </div>
-    <!-- TODO: add overlay on search input -->
-    <div class="uk-navbar-right uk-margin-medium-right">
-      <div class="uk-navbar-item" >
-         <form class="uk-search" aria-label="Search">
-             <input class="uk-search-input uk-width-medium" type="search" placeholder="" aria-label=""/>
-             <span uk-search-icon class="uk-search-icon-flip"></span>
-         </form>
+  <body>
+    <!-- NAVBAR -->
+    <div
+      class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-margin-small-bottom uk-visible@s"
+      uk-navbar
+      uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky"
+    >
+      <div class="uk-navbar-left">
+        <a
+          href="{{ url_for('index') }}"
+          class="uk-navbar-item uk-logo uk-margin-medium-left"
+          aria-label="Back to Home"
+          >Netflex</a
+        >
       </div>
-      
-      <div class="uk-navbar-item">
-         <span uk-icon="bell"></span>
+      <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li>
+            <a href="{{ url_for('tv_shows') }}">TV Shows</a>
+          </li>
+          <li>
+            <a href="{{ url_for('movies') }}">Movies</a>
+          </li>
+          <li>
+            <a href="">My List</a>
+          </li>
+        </ul>
       </div>
-      <div class="uk-navbar-item">
-           <a href="">My Account <span uk-navbar-parent-icon ></span></a>
-           <div class="uk-navbar-dropdown">…</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navbar for mobile screen -->
-  <nav class="uk-navbar-container uk-hidden@s">
-    <div class="uk-container">
-      <div uk-navbar>
-        <div class="uk-navbar-left ">
-          <a href="#" class="uk-navbar-item uk-logo text-red-800" aria-label="Back to Home">NETFLEX</a>
+      <!-- TODO: add overlay on search input -->
+      <div class="uk-navbar-right uk-margin-medium-right">
+        <div class="uk-navbar-item">
+          <form class="uk-search" aria-label="Search">
+            <input
+              class="uk-search-input uk-width-medium"
+              type="search"
+              placeholder=""
+              aria-label=""
+            />
+            <span uk-search-icon class="uk-search-icon-flip"></span>
+          </form>
         </div>
-        <div class="uk-navbar-right">
-          <a
-            class="uk-navbar-toggle-animate uk-navbar-toggle"
-            uk-navbar-toggle-icon
-            href="#"
-          ></a>
-          <div class="uk-navbar-dropdown">
-            <ul class="uk-nav uk-navbar-dropdown-nav">
-              <li class="uk-active">
-                <a href="">Home</a>
-              </li>
-              <li>
-                <a href="">TV Shows</a>
-              </li>
-              <li>
-                <a href="">Movies</a>
-              </li>
-              <li>
-                <a href="">My List</a>
-              </li>
-            </ul>
+
+        <div class="uk-navbar-item">
+          <span uk-icon="bell"></span>
+        </div>
+        <div class="uk-navbar-item">
+          <a href="">My Account <span uk-navbar-parent-icon></span></a>
+          <div class="uk-navbar-dropdown">…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar for mobile screen -->
+    <nav class="uk-navbar-container uk-hidden@s">
+      <div class="uk-container">
+        <div uk-navbar>
+          <div class="uk-navbar-left">
+            <a
+              href="#"
+              class="uk-navbar-item uk-logo text-red-800"
+              aria-label="Back to Home"
+              >NETFLEX</a
+            >
+          </div>
+          <div class="uk-navbar-right">
+            <a
+              class="uk-navbar-toggle-animate uk-navbar-toggle"
+              uk-navbar-toggle-icon
+              href="#"
+            ></a>
+            <div class="uk-navbar-dropdown">
+              <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li class="uk-active">
+                  <a href="">Home</a>
+                </li>
+                <li>
+                  <a href="">TV Shows</a>
+                </li>
+                <li>
+                  <a href="">Movies</a>
+                </li>
+                <li>
+                  <a href="">My List</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+    </nav>
+
+    <div class="uk-width-4-5 uk-margin-auto">
+      {% block content %}{% endblock %} {% block test %}{% endblock %}
     </div>
-  </nav>
 
-
-
-
-
-  <div class="uk-width-4-5 uk-margin-auto">
-    {% block content %}{% endblock %}
-
-
-    {% block test %}{% endblock %}
-  </div>
-
-
-    
-
-  <!-- #TODO: add footer -->
-    
-</body>
-
+    <!-- #TODO: add footer -->
+  </body>
 </html>

@@ -1,25 +1,25 @@
-from flask import Flask, render_template
-from api import config
+from flask import Flask, render_template, request
+from OLD_api import config
 
 app = Flask(__name__)
 
 movies_datas = [
 	{
 		"id":1,
-		"title": "Alien Romulus",
-		"year": 2024,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "Fede Álvarez",
+		"Title": "Alien Romulus",
+		"Release_year": 2024,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "Fede Álvarez",
 		"genre": "Drama",
 		"picture": "./static/img/alien-romulus.webp",
 		"video": "x0XDEhP4MQs?si=MQou6bAzHhbgbRx7"
 	},
 	{
 		"id":2,
-		"title": "The Godfather",
-		"year": 1972,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "Francis Ford Coppola",
+		"Title": "The Godfather",
+		"Release_year": 1972,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "Francis Ford Coppola",
 		"genre": "Crime",
 		"picture": "./static/img/godfather.png",
 		"video": "UaVTIH8mujA?si=ITrrqUJT7LE3X-sa"
@@ -27,10 +27,10 @@ movies_datas = [
 	},
 	{
 		"id":3,
-		"title": "The Dark Knight",
-		"year": 2008,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "Christopher Nolan",
+		"Title": "The Dark Knight",
+		"Release_year": 2008,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "Christopher Nolan",
 		"genre": "Action",
 		"picture": "./static/img/dark_knight.jpg",
 
@@ -40,55 +40,55 @@ movies_datas = [
 horror_movies = [
 	{
 		"id": 4,
-		"title": "The Conjuring",
-		"year": 2013,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "James Wan",
+		"Title": "The Conjuring",
+		"Release_year": 2013,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "James Wan",
 		"genre": "Horror",
 		"picture": "./static/img/conjuring.jpg",
 	},
 	{
 		"id": 5,
-		"title": "The Exorcist",
-		"year": 1973,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "William Friedkin",
+		"Title": "The Exorcist",
+		"Release_year": 1973,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "William Friedkin",
 		"genre": "Horror",
 		"picture": "./static/img/exorcist.jpg",
 	},
 	{
 		"id": 6,
-		"title": "The Shining",
-		"year": 1980,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "Stanley Kubrick",
+		"Title": "The Shining",
+		"Release_year": 1980,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "Stanley Kubrick",
 		"genre": "Horror",
 		"picture": "./static/img/shining.jpg"
 	},
 	{
 		"id": 7,
-		"title": "Psycho",
-		"year": 1960,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "Alfred Hitchcock",
+		"Title": "Psycho",
+		"Release_year": 1960,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "Alfred Hitchcock",
 		"genre": "Horror",
 		"picture": "./static/img/psycho.jpg"
 	},
 	{
 		"id": 8,
-		"title": "The Texas Chainsaw Massacre",
-		"year": 1974,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "Tobe Hooper",
+		"Title": "The Texas Chainsaw Massacre",
+		"Release_year": 1974,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "Tobe Hooper",
 		"genre": "Horror",
 		"picture": "./static/img/texas_chainsaw_massacre.jpg"
 	},
 	{
 		"id": 9,
-		"title": "Halloween",
-		"year": 1978,
-		"resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
-		"director": "John Carpenter",
+		"Title": "Halloween",
+		"Release_year": 1978,
+		"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor sapien quis aliquam dignissim. Nullam pulvinar mi libero, in porttitor est feugiat sit amet. Curabitur quis lacus odio.",
+		"Director": "John Carpenter",
 		"genre": "Horror",
 		"picture": "./static/img/halloween.jpg"
 	}
@@ -151,8 +151,16 @@ datas = [
 def index():
 	
 
-	# return render_template('pages/home/index.html', datas=datas)
-	return render_template('pages/authentication/index.html')
+	return render_template('pages/home/index.html', datas=datas)
+	# return render_template('pages/authentication/index.html')
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+
+	if request.method == 'POST':
+		print('request.form:', request.form)
+	
+	return render_template('pages/login/index.html')
 
 @app.route("/movies")
 def movies():
@@ -165,6 +173,11 @@ def movie_detail(movie_id):
 	print('data:', data)
 	return render_template('pages/movie_detail/index.html', data=data)
 
+@app.route("/movies/<int:movie_id>/watch")
+def watch_movie(movie_id):
+	data = list(filter(lambda movie: movie['id'] == movie_id, movies_datas))[0]
+	return render_template('pages/watch_movie/index.html', data=data)
+
 
 @app.route("/tv-shows")
 def tv_shows():
@@ -174,6 +187,7 @@ def tv_shows():
 def tv_show_detail(tv_show_id):
 	data = list(filter(lambda movie: movie['id'] == tv_show_id, movies_datas))[0]
 	return render_template('pages/tv_show_detail/index.html', data=data)
+
 
 if __name__ == '__main__':
 	app.run(debug=True)

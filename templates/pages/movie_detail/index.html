@@ -1,16 +1,42 @@
 {% extends "base.html" %}
 
 {%block content%}
-    <h2>{{data.title}}</h2>
-    <p>{{data.year}}</p>
+<div class="uk-width-1-1 uk-height-1-1">
+    <div class="uk-background-cover  uk-flex uk-flex-bottom uk-flex-middle uk-panel uk-height-large" style="background-image: url('https://blog.figurines-mania.com/wp-content/uploads/2024/05/alien-romulus.jpg'); height:700px; ">
+        <div class="uk-background-muted uk-card uk-width-1-4@m uk-height-1-2 uk-margin-medium-bottom uk-margin-medium-left" >
+            <div class="uk-card-header">
+                <h2 class="uk-card-title uk-text-large  uk-margin-small-bottom" style="font-size: 2.5rem; text-transform: uppercase;">{{data.Title}}</h2>
+                <div class="uk-flex uk-flex-between">
+                    <p>{{data.Release_year}}</p>
+                    <!-- <p>{{data.Rating}}</p> -->
+                    <p>9/10</p>
+                    <p>160min</p>
+                    <!-- <p>{{data.Duration}}</p> -->
+                </div>
+            </div>
+            <div class="uk-card-body ">
+                <div class="uk-flex uk-flex-between uk-margin-small-bottom">
+                    <button class="uk-button uk-button-primary">Watch</button>
+                    <button class="uk-button ">Add to my list</button>
+                    <button class="uk-button ">Like</button>
+                </div>
+            
+                <p>{{data.Description}}</p>
+            </div>
+            
+        </div>
+        
+    
+    </div>
 
-    <h2>Details</h2>
+    <h2>Suggestions</h2>
+</div>
 
-    <h2>Actors</h2>
-
-    <h2>Video</h2>
+    
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{data.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/oi16WZBkaGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 
     
 {%endblock%}
