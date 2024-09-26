@@ -34,15 +34,16 @@
                             <div class=" uk-slider-items uk-child-width-1-1">
                                 {%for tv_show in category.tv_shows %}
                                     <div class="uk-cover-container uk-height-large">
-                                        <a href="{{ url_for('movie_detail', movie_id=tv_show.index) }}">
-                                            <img class="home-movies-news-slider" src={{tv_show.picture}} alt="{{tv_show.Title}} picture">
+                                        <a href="{{ url_for('movie_detail', movie_id=tv_show.id) }}">
+                                            <!-- <img class="home-movies-news-slider" src={{tv_show.backdrop_path}} alt="{{tv_show.name}} picture"> -->
+                                            <img class="home-movies-news-slider" src="https://image.tmdb.org/t/p/w100{{tv_show.backdrop_path}}" alt="{{tv_show.name}} picture">
                                         </a>
                                         <div class="uk-position-bottom-left uk-card uk-card-body uk-margin-medium-left uk-margin-medium-bottom uk-width-1-3 uk-height-1-2 uk-background-muted">
                                             <div class="uk-card-header">
-                                                <h2 class="uk-card-title">{{tv_show.Title}}</h2>
+                                                <h2 class="uk-card-title">{{tv_show.name}}</h2>
                                             </div>
                                             <div class="uk-card-body uk-visible@s">
-                                                <p class="uk-margin uk-text-truncate">{{tv_show.Description}}</p>
+                                                <p class="uk-margin uk-text-truncate">{{tv_show.overview}}</p>
                                             </div>
                                             <div class="uk-card-footer uk-flex uk-child-with-1-2">
                                                 <button class="uk-button uk-button-primary uk-margin-small-right uk-width-1-2">Watch</button>
@@ -77,14 +78,14 @@
                                     <div>
                                         <div class="uk-card uk-card-default">
                                         <div class="uk-card-media-top">
-                                            <a href="{{ url_for('movie_detail', movie_id=tv_show.index) }}">
-                                                <img class="home-tv_show-category-slider"  src={{tv_show.picture}} alt="{{tv_show.Title}} picture" height="400px">
+                                            <a href="{{ url_for('movie_detail', movie_id=tv_show.id) }}">
+                                                <img class="home-movies-news-slider" src="https://image.tmdb.org/t/p/w500{{tv_show.backdrop_path}}" alt="{{tv_show.name}} picture" style="height: 500px;">
                                             </a>
                                         </div>
                                         <div class="uk-card-body">
-                                            <h3 class="uk-card-title">{{tv_show.Title}}</h3>
+                                            <h3 class="uk-card-title">{{tv_show.name}}</h3>
                                             <p>
-                                                {{tv_show.Description}}
+                                                {{tv_show.overview}}
                                             </p>
                                         </div>
                                         </div>
