@@ -11,7 +11,7 @@
                         {%for category in datas%}
                             <div>
                                 <button class="uk-button uk-button-default">
-                                {{category.category_title}}
+                                {{category.category}}
                                 </button>
                             </div>
                         {%endfor%}          
@@ -25,24 +25,24 @@
         </div>
     
         {%for category in datas %}
-        <h2 class="uk-text-large uk-text-bold uk-margin-medium-top">{{category.category_title}}</h2>
-            {% if category.category_title == "Recently added"%}
+        <h2 class="uk-text-large uk-text-bold uk-margin-medium-top">{{category.category}}</h2>
+            {% if category.category == "Recently added"%}
                 <!-- SLIDER -->
                 <div uk-slider="">
                     <div class="uk-position-relative ">
                         <div class="uk-slider-container ">
                             <div class=" uk-slider-items uk-child-width-1-1">
-                                {%for movie in category.movies %}
+                                {%for tv_show in category.tv_shows %}
                                     <div class="uk-cover-container uk-height-large">
-                                        <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
-                                            <img class="home-movies-news-slider" src={{movie.picture}} alt="{{movie.title}} picture">
+                                        <a href="{{ url_for('movie_detail', movie_id=tv_show.index) }}">
+                                            <img class="home-movies-news-slider" src={{tv_show.picture}} alt="{{tv_show.Title}} picture">
                                         </a>
                                         <div class="uk-position-bottom-left uk-card uk-card-body uk-margin-medium-left uk-margin-medium-bottom uk-width-1-3 uk-height-1-2 uk-background-muted">
                                             <div class="uk-card-header">
-                                                <h2 class="uk-card-title">{{movie.title}}</h2>
+                                                <h2 class="uk-card-title">{{tv_show.Title}}</h2>
                                             </div>
                                             <div class="uk-card-body uk-visible@s">
-                                                <p class="uk-margin uk-text-truncate">{{movie.Description}}</p>
+                                                <p class="uk-margin uk-text-truncate">{{tv_show.Description}}</p>
                                             </div>
                                             <div class="uk-card-footer uk-flex uk-child-with-1-2">
                                                 <button class="uk-button uk-button-primary uk-margin-small-right uk-width-1-2">Watch</button>
@@ -73,18 +73,18 @@
                     <div class="uk-position-relative">
                         <div class="uk-slider-container">
                             <div class="uk-slider-items uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m">
-                                {% for movie in category.movies %}
+                                {% for tv_show in category.tv_shows %}
                                     <div>
                                         <div class="uk-card uk-card-default">
                                         <div class="uk-card-media-top">
-                                            <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
-                                                <img class="home-movie-category-slider"  src={{movie.picture}} alt="{{movie.title}} picture" height="400px">
+                                            <a href="{{ url_for('movie_detail', movie_id=tv_show.index) }}">
+                                                <img class="home-tv_show-category-slider"  src={{tv_show.picture}} alt="{{tv_show.Title}} picture" height="400px">
                                             </a>
                                         </div>
                                         <div class="uk-card-body">
-                                            <h3 class="uk-card-title">{{movie.title}}</h3>
+                                            <h3 class="uk-card-title">{{tv_show.Title}}</h3>
                                             <p>
-                                                {{movie.Description}}
+                                                {{tv_show.Description}}
                                             </p>
                                         </div>
                                         </div>

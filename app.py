@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from OLD_api import config
+from repo.Title import get_all_tv_shows_paginated, get_categories, get_tv_show_by_category_paginated, get_categories_tv_shows
 
 app = Flask(__name__)
 
@@ -181,7 +182,16 @@ def watch_movie(movie_id):
 
 @app.route("/tv-shows")
 def tv_shows():
-	return render_template('pages/tv_shows/index.html', datas=datas)
+	categories = get_categories_tv_shows()
+	category_tv_show_list = []
+	if categories:
+		for category in categories:
+			tv_show_list = get_tv_show_by_category_paginated(category)
+			category_tv_show_list.append({"category": category, "tv_shows": tv_show_list})
+
+		return render_template('pages/tv_shows/index.html', datas=category_tv_show_list)
+	# else:
+		# TODO: create error page
 
 @app.route('/tv-shows/<int:tv_show_id>')
 def tv_show_detail(tv_show_id):
