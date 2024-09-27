@@ -74,20 +74,6 @@ user_account_test = [['01', 'John Doe', 'jdoe@gmail.com','password', 'United Sta
 pd.DataFrame(columns=['User_id', 'Name', 'Email', 'Password', 'Country','Gender', 'Age'], data=user_account_test).to_sql('User_account', con=engine, if_exists='replace', index=True, index_label='Id')
 
 
-# # RECUPERATION DES NOMS ET DES PATHS DES IMAGES
-# name_img_movie_path = tmdb_movie_file[['Title', 'Backdrop_path']]
-# # Remove duplicates in the 'Title' column of name_img_movie_path
-# name_imgpath_unique = name_img_movie_path.drop_duplicates(subset=['Title'])
-
-# #CREATION D UN DATAFRAME OU JE MERGE TITLE ET name_img_movie_path
-# title_df = titles_file_data.merge(name_imgpath_unique, on='Title', how='left')
-
-# #CREATION DE LA TABLE TITLE
-# title_df.to_sql('Title', con=engine, if_exists='replace', index=True, index_label='Id')
-
-# 
-
-
 
 
 
